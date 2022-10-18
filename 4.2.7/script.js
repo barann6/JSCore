@@ -1,4 +1,4 @@
-let RepoList;
+let repoList;
 let inputField = document.querySelector('#input');
 let suggestionsList = document.querySelector('#suggestions');
 let choicesList = document.querySelector('#list');
@@ -9,20 +9,20 @@ inputField.addEventListener('input', function (e) {
   suggestionsList.innerHTML = '';
   awaitOnInput = setTimeout(() => {
     if (!e.target.value) return;
-    RepoList = loadRepos(e.target.value)
-      .then((response) => (RepoList = response))
-      .then(() => (RepoList = formList(RepoList)))
-      .then(() => suggestionsFromList(RepoList));
+    repoList = loadRepos(e.target.value)
+      .then((response) => (repoList = response))
+      .then(() => (repoList = formList(repoList)))
+      .then(() => suggestionsFromList(repoList));
   }, 900);
 });
 
 inputField.addEventListener('change', function (e) {
   if (
     e.target.value &&
-    RepoList[e.target.value] &&
+    repoList[e.target.value] &&
     document.activeElement === inputField
   ) {
-    addItemToPage(RepoList[e.target.value]);
+    addItemToPage(repoList[e.target.value]);
   }
   e.target.value = '';
   suggestionsList.innerHTML = '';
