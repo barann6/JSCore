@@ -34,13 +34,13 @@ choicesList.addEventListener('click', function (e) {
 });
 
 async function loadRepos(name) {
-  try {
-    let results = await fetch(
+    let response = await fetch(
       `https://api.github.com/search/repositories?q=${name}&per_page=5`
     );
-    return await results.json();
-  } catch (error) {
-    throw error;
+    if (response.ok) {
+      return await response.json();
+    } else {
+      throw new Error('Server error')
   }
 }
 
