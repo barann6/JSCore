@@ -1,11 +1,11 @@
 ## Registration response
-{
-  "user": {
-    "username": "serafim123",
-    "email": "b20012011@yandex.ru",
-    "password": "852852"
-  }
-}
+{\n
+  "user": {\n
+    "username": "serafim123",\n
+    "email": "b20012011@yandex.ru",\n
+    "password": "852852"\n
+  }\n
+}\n
 ## Login response
 {
   "user": {
